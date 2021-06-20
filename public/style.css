@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.card{
+
+    border: 1px solid gray;
+    height: 400px;
+}
+.container{
+    margin-top: 10vh;
+}
+
+.img{
+    
+     display: flex;
+     flex-direction: row;
+     padding-left: 17vw;
+     padding-top: 25px;
+     
+}
+.boton{
+    width: 15vw;
+}
+
+.text{
+    margin-top: 2vh;
+    margin-bottom: 0%;
+}
