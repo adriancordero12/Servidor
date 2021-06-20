@@ -10,7 +10,7 @@ const dbConnection = async () => {
             useCreateIndex:true,
             useFindAndModify:false
         });
-        console.log("Database online")
+        console.log("Base de datos conectada")
 
         
     } catch (error) {
