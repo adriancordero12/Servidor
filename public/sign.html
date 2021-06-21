@@ -114,7 +114,7 @@
             e.preventDefault()
 
             var url = (window.location.hostname.includes('localhost'))
-            ?`http://localhost:8081/api/login`
+            ?`http://localhost:8081/api/user`
             :`https://servidor-ippjb.herokuapp.com/api/user`
 
             const data = {
@@ -128,8 +128,18 @@
                 body:JSON.stringify(data)
             })
             .then(res => res.json())
-            .then(data => console.log(data))
-            .catch(console.log(error))
+            .then(data => {
+                if (data.msg == "Ok") {
+                        var url = (window.location.hostname.includes('localhost'))
+                            ? `http://localhost:8081`
+                            : `https://servidor-ippjb.herokuapp.com`
+                        window.location.href = url;
+
+                    }
+            })
+            .catch( error =>{
+                console.log(error)
+            })
 
 
         })
