@@ -31,6 +31,9 @@
                 
                 <input type="password" class="form-control" id="password" placeholder="Password">
             </div>
+            <div class="col-sm-12 text-center " role="alert" id="alerta">
+              
+              </div>
            <div class=" col-sm-12 text-center "> 
             <button type="submit" id="btn" class="btn btn-success boton  w-100">Registrarse</button>
            </div>
@@ -48,62 +51,12 @@
            </div>
         </div>
 
-
-        <!-- <button type="submit" id="btn" class="btn btn-success boton">Login</button> -->
-
-        
     </div>
 
 
 
-
-
-
-
-
-
-    <!-- <div class="container col-5 card">
-        <div>
-            <img class="img" src="img/user.png">
-        </div>
-
-
-
-        <form>
-
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" class="form-control" id="name">
-            </div>
-
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" id="email">
-            </div>
-
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" id="password">
-            </div>
-
-            <button type="submit" class="btn btn-danger boton" id="btn">Sign</button>
-        </form>
-        <div>
-            <p class="text">Tienes una cuenta?</p>
-            <div class="sign">
-                <a href="index.html">
-                    <p>Inicia Sesión</p>
-                </a>
-
-            </div>
-        </div>
-    </div> -->
-
     <script>
-
         //valores del formularios
-
-
 
         let btn = document.getElementById('btn')
         btn.addEventListener('click', function (e) {
@@ -129,6 +82,13 @@
             })
             .then(res => res.json())
             .then(data => {
+                console.log(data.error)
+                if(data.error == "ok"){
+                    var alerta = document.getElementById('alerta').innerHTML=`<div class="alert alert-danger " >
+                        ${data.msg}
+                        </div>`
+
+                }
                 if (data.msg == "Ok") {
                         var url = (window.location.hostname.includes('localhost'))
                             ? `http://localhost:8081`
@@ -138,7 +98,8 @@
                     }
             })
             .catch( error =>{
-                console.log(error)
+              
+                
             })
 
 

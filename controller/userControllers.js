@@ -15,8 +15,16 @@ const postUser = async(req, res=response) =>{
 
     const exitEmail = await User.findOne({ email })
     if (exitEmail) {
-        return res.status(401).json({
+        return res.status(200).json({
+            error:"ok",
             msg: 'Este email esta registrado'
+        });
+    }
+
+    if (!password || password.length < 6) {
+        return res.status(200).json({
+            error:"ok",
+            msg: 'La contraseña no debe ser vacia, debe tener un minimo de  6 caracteres'
         });
     }
 
