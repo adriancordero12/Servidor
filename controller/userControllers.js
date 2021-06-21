@@ -11,6 +11,7 @@ const getUser = async(req, res=response) =>{
 
 const postUser = async(req, res=response) =>{
     const {name, email, password } = req.body
+    console.log(name, email, password )
 
     const exitEmail = await User.findOne({ email })
     if (exitEmail) {

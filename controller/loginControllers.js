@@ -29,6 +29,7 @@ const login = async (req, res = response) => {
         }
         res.json({
             msg: "Session Iniciada Correctamente ",
+            login:"Ok",
             user
         })
     } catch (error) {

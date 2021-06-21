@@ -1,5 +1,7 @@
 const express = require('express');
 const { dbConnection } = require('../database/config');
+const cors = require('cors')
+
 
 
 class Server {
@@ -35,7 +37,7 @@ class Server {
 
     middlewares() {
         //CORS
-        // this.app.use(cors())
+         this.app.use(cors())
 
         //Directorio Publico
         this.app.use(express.static('public'))
