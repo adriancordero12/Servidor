@@ -56,7 +56,9 @@
             //  var url = "http://localhost:8081/api/login";
             var url = (window.location.hostname.includes('localhost'))
             ?`http://localhost:8081/api/login`
-            :`https://servidor-ippjb.herokuapp.com/`
+            :`https://servidor-ippjb.herokuapp.com/api/login`
+
+            //https://servidor-ippjb.herokuapp.com/
 
             const data = {
                 email, password

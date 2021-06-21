@@ -65,7 +65,9 @@
 
             e.preventDefault()
 
-            var url = "http://localhost:8081/api/user";
+            var url = (window.location.hostname.includes('localhost'))
+            ?`http://localhost:8081/api/login`
+            :`https://servidor-ippjb.herokuapp.com/api/user`
 
             const data = {
                 name, email, password
